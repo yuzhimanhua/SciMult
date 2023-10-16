@@ -27,3 +27,5 @@ dependencies:
     - tdqm
     - jsonlines
     - zmq
+    - pytrec_eval
+    - beir

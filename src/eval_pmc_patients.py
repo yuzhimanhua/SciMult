@@ -31,7 +31,6 @@ parser = argparse.ArgumentParser(description='main', formatter_class=argparse.Ar
 parser.add_argument('--dataset', required=True)
 parser.add_argument('--subtask', required=True)
 parser.add_argument('--model', required=True)
-parser.add_argument('--ckpt', required=True)
 args = parser.parse_args()
 
 # Specificies the device used for inference. Modifies it if necessary.
@@ -46,7 +45,7 @@ input_data_basedir = '../data/pmc_patients'
 output_data_basedir = '../output'
 
 # Reads in the model parameters
-model_fn = f'../model/{args.model}/dpr_biencoder.{args.ckpt}'
+model_fn = f'../model/{args.model}'
 state_dict = torch.load(model_fn)
 tokenizer, biencoder = get_any_biencoder_component_for_infer(state_dict['encoder_params'])
 

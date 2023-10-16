@@ -1,19 +1,15 @@
 dataset=CSConference
-model=biencoder_mod2attn_n3_taser_encoder_w_random_pos_data_v4_full_neg_3xG16_from_pubmedbert_abs
-ckpt=9
-python3.8 eval_classification_fine.py --dataset ${dataset} --model ${model} --ckpt ${ckpt}
+model=scimult_moe.ckpt
+python3.8 eval_classification_fine.py --dataset ${dataset} --model ${model}
 
 dataset=ChemistryMeSH
-model=biencoder_mod2attn_n3_taser_encoder_w_random_pos_data_v4_full_neg_3xG16_from_pubmedbert_abs
-ckpt=9
-python3.8 eval_classification_fine.py --dataset ${dataset} --model ${model} --ckpt ${ckpt}
+model=scimult_moe.ckpt
+python3.8 eval_classification_fine.py --dataset ${dataset} --model ${model}
 
 dataset=Geography
-model=biencoder_mod2attn_n3_taser_encoder_w_random_pos_data_v4_full_neg_3xG16_from_pubmedbert_abs
-ckpt=9
-python3.8 eval_classification_fine.py --dataset ${dataset} --model ${model} --ckpt ${ckpt}
+model=scimult_moe.ckpt
+python3.8 eval_classification_fine.py --dataset ${dataset} --model ${model}
 
 dataset=Psychology
-model=biencoder_mod2attn_n3_taser_encoder_w_random_pos_data_v4_full_neg_3xG16_from_pubmedbert_abs
-ckpt=9
-python3.8 eval_classification_fine.py --dataset ${dataset} --model ${model} --ckpt ${ckpt}
+model=scimult_moe.ckpt
+python3.8 eval_classification_fine.py --dataset ${dataset} --model ${model}

@@ -30,7 +30,6 @@ from eval_helper import get_any_biencoder_component_for_infer, embed_text_psg, E
 parser = argparse.ArgumentParser(description='main', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument('--dataset', required=True)
 parser.add_argument('--model', required=True)
-parser.add_argument('--ckpt', required=True)
 parser.add_argument('--expert', required=True)
 parser.add_argument('--out_fn', required=True)
 args = parser.parse_args()
@@ -43,7 +42,7 @@ output_data_basedir = f'../output'
 out_fn = args.out_fn
 
 # Reads in the model parameters
-model_fn = f'../model/{args.model}/dpr_biencoder.{args.ckpt}'
+model_fn = f'../model/{args.model}'
 state_dict = torch.load(model_fn)
 tokenizer, biencoder = get_any_biencoder_component_for_infer(state_dict['encoder_params'])
 
