@@ -61,7 +61,7 @@ cd src
 The metrics will be shown at the end of the terminal output as well as in ```scores.txt```. The similarity scores that we submitted to the leaderboard can be found at ```../output/PMCPatientsPAR_test_out.json``` and ```../output/PMCPatientsPPR_test_out.json```.
 
 ### SciDocs
-To reproduce our performance on the [SciDocs](https://github.com/allenai/scidocs) benchmark:
+To reproduce our performance on the [SciDocs benchmark](https://github.com/allenai/scidocs):
 ```bash
 cd src
 ./eval_scidocs.sh
