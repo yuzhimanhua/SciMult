@@ -115,9 +115,8 @@ More details about each constituent dataset are as follows.
 | SciFact | ```search/``` | 1,109 | 5,183 | [Link](https://github.com/beir-cellar/beir) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), [CC BY-NC 2.0](https://creativecommons.org/licenses/by-nc/2.0/) |
 | NFCorpus | ```search/``` | 3,237 | 3,633 | [Link](https://github.com/beir-cellar/beir) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 
-
 ## Models
-TBD
+Our pre-trained models can be downloaded from [here](https://huggingface.co/yuz9yuz/SciMult/tree/main). Please refer to the Hugging Face [README](https://huggingface.co/yuz9yuz/SciMult/) for more details about the models. 
 
 ## Citation
 If you find SciMult useful in your research, please cite the following paper:
