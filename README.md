@@ -86,7 +86,35 @@ python eval.py
 The metrics will be shown at the end of the terminal output.
 
 ## Datasets
-TBD
+The preprocessed evaluation datasets can be downloaded from [here](https://drive.google.com/file/d/1hoUAInDVO_UYnQiOOoVuBjwnVgY0BosO/view?usp=drive_link). The aggregate version is released under the [ODC-By v1.0 License](https://opendatacommons.org/licenses/by/1-0/). By downloading this version you acknowledge that you have read and agreed to all the terms in this license. 
+
+Similar to Tensorflow [datasets](https://github.com/tensorflow/datasets) or Hugging Face's [datasets](https://github.com/huggingface/datasets) library, we just downloaded and prepared public datasets. We only distribute these datasets in a specific format, but we do not vouch for their quality or fairness, or claim that you have the license to use the dataset. It remains the user's responsibility to determine whether you as a user have permission to use the dataset under the dataset's license and to cite the right owner of the dataset.
+
+More details about each constituent dataset are as follows.
+| Dataset | Folder | #Queries | #Candidates | Source | License |
+| ------- | ------ | -------- | ----------- | ------ | ------- |
+| MAPLE (CS-Conference) | ```classification_fine/``` | 261,781 | 15,808 | [Link](https://github.com/yuzhimanhua/MAPLE) | [ODC-By v1.0](https://opendatacommons.org/licenses/by/1-0/) |
+| MAPLE (Chemistry-MeSH) | ```classification_fine/``` | 762,129 | 30,194 | [Link](https://github.com/yuzhimanhua/MAPLE) | [ODC-By v1.0](https://opendatacommons.org/licenses/by/1-0/) |
+| MAPLE (Geography) | ```classification_fine/``` | 73,883 | 3,285 | [Link](https://github.com/yuzhimanhua/MAPLE) | [ODC-By v1.0](https://opendatacommons.org/licenses/by/1-0/) |
+| MAPLE (Psychology) | ```classification_fine/``` | 372,954 | 7,641 | [Link](https://github.com/yuzhimanhua/MAPLE) | [ODC-By v1.0](https://opendatacommons.org/licenses/by/1-0/) |
+| SciDocs (MAG Fields) | ```classification_coarse/``` | 25,001 | 19 | [Link](https://github.com/allenai/scidocs) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| SciDocs (MeSH Diseases) | ```classification_coarse/``` | 23,473 | 11 | [Link](https://github.com/allenai/scidocs) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| SciDocs (Cite) | ```link_prediction_retrieval/``` | 92,214 | 142,009 | [Link](https://github.com/allenai/scidocs) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| SciDocs (Co-cite) | ```link_prediction_retrieval/``` | 54,543 | 142,009 | [Link](https://github.com/allenai/scidocs) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| PMC-Patients (PPR, Zero-shot) | ```link_prediction_retrieval/``` | 100,327 | 155,151 | [Link](https://github.com/pmc-patients/pmc-patients) | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+| PMC-Patients (PAR, Supervised) | ```pmc_patients/``` | 5,959 | 1,413,087 | [Link](https://github.com/pmc-patients/pmc-patients) | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+| PMC-Patients (PPR, Supervised) | ```pmc_patients/``` | 2,812 | 155,151 | [Link](https://github.com/pmc-patients/pmc-patients) | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+| SciDocs (Co-view) | ```scidocs/``` | 1,000 | reranking, 29.98 for each query on average | [Link](https://github.com/allenai/scidocs) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| SciDocs (Co-read) | ```scidocs/``` | 1,000 | reranking, 29.98 for each query on average | [Link](https://github.com/allenai/scidocs) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| SciDocs (Cite) | ```scidocs/``` | 1,000 | reranking, 29.93 for each query on average | [Link](https://github.com/allenai/scidocs) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| SciDocs (Co-cite) | ```scidocs/``` | 1,000 | reranking, 29.95 for each query on average | [Link](https://github.com/allenai/scidocs) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| Recommendation | ```link_prediction_reranking/``` | 137 | reranking, 16.28 for each query on average | [Link](https://github.com/akanakia/microsoft-academic-paper-recommender-user-study) | N/A |
+| SciRepEval-Search | ```search/``` | 2,637 | reranking, 10.00 for each query on average | [Link](https://github.com/allenai/scirepeval) | [ODC-By v1.0](https://opendatacommons.org/licenses/by/1-0/) |
+| TREC-COVID in SciRepEval | ```search/``` | 50 | reranking, 1386.36 for each query on average | [Link](https://github.com/allenai/scirepeval) | [ODC-By v1.0](https://opendatacommons.org/licenses/by/1-0/) |
+| TREC-COVID in BEIR | ```search/``` | 50 | 171,332 | [Link](https://github.com/beir-cellar/beir) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| SciFact | ```search/``` | 1,109 | 5,183 | [Link](https://github.com/beir-cellar/beir) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), [CC BY-NC 2.0](https://creativecommons.org/licenses/by-nc/2.0/) |
+| NFCorpus | ```search/``` | 3,237 | 3,633 | [Link](https://github.com/beir-cellar/beir) | [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+
 
 ## Models
 TBD
