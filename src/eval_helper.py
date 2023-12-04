@@ -66,6 +66,9 @@ def get_any_biencoder_component_for_infer(cfg, use_uni_biencoder: bool = True, *
 
 	factor_rep = cfg['factor_rep']
 
+	if cfg["pretrained_model_cfg"] == 'microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract':
+		cfg["pretrained_model_cfg"] = 'microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract'
+
 	question_encoder = HFEncoder(
 		cfg['pretrained_model_cfg'],
 		projection_dim=cfg['projection_dim'],
