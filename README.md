@@ -53,12 +53,16 @@ cd src
 The metrics will be shown at the end of the terminal output as well as in ```scores.txt```.
 
 ### PMC-Patients
-To reproduce our performance on the [PMC-Patients Leaderboard](https://pmc-patients.github.io/):
+**NOTE: The performance of SciMult on PMC-Patients reported in our [paper](https://arxiv.org/pdf/2305.14232.pdf) is based on [the old version](https://arxiv.org/pdf/2202.13876v4.pdf) of PMC-Patients (i.e., the version when we wrote the SciMult paper). The PMC-Patients Leaderboard at that time can be found [here](https://scimult.github.io/pmcpatients/PMC-Patients%20Homepage.html).**
+
+To reproduce our reported performance on the "old" PMC-Patients Leaderboard:
 ```bash
 cd src
 ./eval_pmc_patients.sh
 ```
 The metrics will be shown at the end of the terminal output as well as in ```scores.txt```. The similarity scores that we submitted to the leaderboard can be found at ```../output/PMCPatientsPAR_test_out.json``` and ```../output/PMCPatientsPPR_test_out.json```.
+
+**For the performance of SciMult on [the new version](https://www.nature.com/articles/s41597-023-02814-8) of PMC-Patients, please refer to the up-to-date [PMC-Patients Leaderboard](https://pmc-patients.github.io/).**
 
 ### SciDocs
 To reproduce our performance on the [SciDocs benchmark](https://github.com/allenai/scidocs):
