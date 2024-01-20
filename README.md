@@ -125,10 +125,11 @@ Our pre-trained models can be downloaded from [here](https://huggingface.co/yuz9
 ## Citation
 If you find SciMult useful in your research, please cite the following paper:
 ```
-@article{zhang2023pre,
+@inproceedings{zhang2023pre,
   title={Pre-training Multi-task Contrastive Learning Models for Scientific Literature Understanding},
   author={Zhang, Yu and Cheng, Hao and Shen, Zhihong and Liu, Xiaodong and Wang, Ye-Yi and Gao, Jianfeng},
-  journal={arXiv preprint arXiv:2305.14232},
+  booktitle={Findings of EMNLP'23},
+  pages={12259--12275},
   year={2023}
 }
 ```
