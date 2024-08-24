@@ -67,12 +67,16 @@ python3.8 get_embedding.py
 ```
 
 ### PMC-Patients
-To reproduce our performance on the [PMC-Patients Leaderboard](https://pmc-patients.github.io/):
+**NOTE: The performance of SciMult on PMC-Patients reported in our [paper](https://arxiv.org/pdf/2305.14232.pdf) is based on [the old version](https://arxiv.org/pdf/2202.13876v4.pdf) of PMC-Patients (i.e., the version when we wrote the SciMult paper). The PMC-Patients Leaderboard at that time can be found [here](https://scimult.github.io/pmcpatients/PMC-Patients%20Homepage.html).**
+
+To reproduce our reported performance on the "old" PMC-Patients Leaderboard:
 ```bash
 cd src
 ./eval_pmc_patients.sh
 ```
 The metrics will be shown at the end of the terminal output as well as in ```scores.txt```. The similarity scores that we submitted to the leaderboard can be found at ```../output/PMCPatientsPAR_test_out.json``` and ```../output/PMCPatientsPPR_test_out.json```.
+
+**For the performance of SciMult on [the new version](https://www.nature.com/articles/s41597-023-02814-8) of PMC-Patients, please refer to the up-to-date [PMC-Patients Leaderboard](https://pmc-patients.github.io/).**
 
 ### SciDocs
 To reproduce our performance on the [SciDocs benchmark](https://github.com/allenai/scidocs):
@@ -135,10 +139,11 @@ Our pre-trained models can be downloaded from [here](https://huggingface.co/yuz9
 ## Citation
 If you find SciMult useful in your research, please cite the following paper:
 ```
-@article{zhang2023pre,
+@inproceedings{zhang2023pre,
   title={Pre-training Multi-task Contrastive Learning Models for Scientific Literature Understanding},
   author={Zhang, Yu and Cheng, Hao and Shen, Zhihong and Liu, Xiaodong and Wang, Ye-Yi and Gao, Jianfeng},
-  journal={arXiv preprint arXiv:2305.14232},
+  booktitle={Findings of EMNLP'23},
+  pages={12259--12275},
   year={2023}
 }
 ```
