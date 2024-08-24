@@ -75,6 +75,8 @@ else:
 	cand_expert_id = None
 
 # Loads the pretrain checkpoints.
+del state_dict['model_dict']['question_model.encoder.embeddings.position_ids']
+del state_dict['model_dict']['ctx_model.encoder.embeddings.position_ids']
 biencoder.load_state_dict(state_dict['model_dict'])
 
 # If using GPU for inference.

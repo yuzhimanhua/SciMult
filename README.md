@@ -17,10 +17,17 @@ We use one NVIDIA RTX A6000 GPU to run the evaluation code in our experiments. T
 ```bash
 git clone --recurse-submodules https://github.com/yuzhimanhua/SciMult
 cd SciMult
-conda env create --file=environment.yml --name=scimult
 
-# activate the new sandbox you just created
+# get the DPR codebase
+mkdir third_party
+cd third_party
+git clone https://github.com/facebookresearch/DPR.git
+cd ../
+
+# create the sandbox
+conda env create --file=environment.yml --name=scimult
 conda activate scimult
+
 # add the `src/` and `third_party/DPR` to the list of places python searches for packages
 conda develop src/ third_party/DPR/
 
@@ -52,17 +59,20 @@ cd src
 ```
 The metrics will be shown at the end of the terminal output as well as in ```scores.txt```.
 
-### PMC-Patients
-**NOTE: The performance of SciMult on PMC-Patients reported in our [paper](https://arxiv.org/pdf/2305.14232.pdf) is based on [the old version](https://arxiv.org/pdf/2202.13876v4.pdf) of PMC-Patients (i.e., the version when we wrote the SciMult paper). The PMC-Patients Leaderboard at that time can be found [here](https://scimult.github.io/pmcpatients/PMC-Patients%20Homepage.html).**
+### Getting embeddings of your own data
+If you have some documents (e.g., scientific papers) and want to get the embedding of each document using SciMult, we provide the following sample code for your reference:
+```bash
+cd src
+python3.8 get_embedding.py
+```
 
-To reproduce our reported performance on the "old" PMC-Patients Leaderboard:
+### PMC-Patients
+To reproduce our performance on the [PMC-Patients Leaderboard](https://pmc-patients.github.io/):
 ```bash
 cd src
 ./eval_pmc_patients.sh
 ```
 The metrics will be shown at the end of the terminal output as well as in ```scores.txt```. The similarity scores that we submitted to the leaderboard can be found at ```../output/PMCPatientsPAR_test_out.json``` and ```../output/PMCPatientsPPR_test_out.json```.
-
-**For the performance of SciMult on [the new version](https://www.nature.com/articles/s41597-023-02814-8) of PMC-Patients, please refer to the up-to-date [PMC-Patients Leaderboard](https://pmc-patients.github.io/).**
 
 ### SciDocs
 To reproduce our performance on the [SciDocs benchmark](https://github.com/allenai/scidocs):
@@ -125,11 +135,10 @@ Our pre-trained models can be downloaded from [here](https://huggingface.co/yuz9
 ## Citation
 If you find SciMult useful in your research, please cite the following paper:
 ```
-@inproceedings{zhang2023pre,
+@article{zhang2023pre,
   title={Pre-training Multi-task Contrastive Learning Models for Scientific Literature Understanding},
   author={Zhang, Yu and Cheng, Hao and Shen, Zhihong and Liu, Xiaodong and Wang, Ye-Yi and Gao, Jianfeng},
-  booktitle={Findings of EMNLP'23},
-  pages={12259--12275},
+  journal={arXiv preprint arXiv:2305.14232},
   year={2023}
 }
 ```

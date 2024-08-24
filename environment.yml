@@ -1,6 +1,4 @@
 channels:
-  # Need to search the "pytorch" channel first because "defaults" channel may contain
-  # the pytorch package that is compiled with CPU only.
   - pytorch
   - conda-forge
   - defaults
@@ -16,14 +14,13 @@ dependencies:
   - spacy=3.3.1
   - torchvision=0.11.0
   - transformers=4.12.5
-  # Need to pin typing_extensions. See https://github.com/explosion/spaCy/issues/12659.
   - typing_extensions=4.4.0
   - ujson
   - pip:
     - wget
     - hydra-core==1.1
     - hydra-submitit-launcher==1.0.1
-    - pytorch-lightning==1.6.0
+    - pytorch-lightning
     - tdqm
     - jsonlines
     - zmq
